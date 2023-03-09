@@ -8,7 +8,9 @@ import {
 import Head from "next/head";
 // import Image from 'next/image'
 
-export default function Home() {
+const LOAD_MORE_STEP = 4;
+
+export default function Home({ posts }) {
   return (
     <>
       <Head>
@@ -28,4 +30,12 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export const getServerSideProps = async () => {
+  const { posts, total } = await loadData(0, LOAD_MORE_STEP);
+};
+
+async function loadData(start, end) {
+  const query = ``;
 }
