@@ -7,10 +7,11 @@ import {
 } from "@/components";
 import Head from "next/head";
 // import Image from 'next/image'
-
+import { loadPosts } from "./api/posts";
 const LOAD_MORE_STEP = 4;
 
-export default function Home({ posts }) {
+export default function Home({ initialPosts, total }) {
+  console.log(initialPosts);
   return (
     <>
       <Head>
@@ -33,9 +34,12 @@ export default function Home({ posts }) {
 }
 
 export const getServerSideProps = async () => {
-  const { posts, total } = await loadData(0, LOAD_MORE_STEP);
-};
+  const { posts, total } = await loadPosts(0, LOAD_MORE_STEP);
 
-async function loadData(start, end) {
-  const query = ``;
-}
+  return {
+    props: {
+      initialPosts: posts,
+      total,
+    },
+  };
+};
