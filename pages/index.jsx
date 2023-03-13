@@ -1,17 +1,20 @@
 import {
   BuyMeCoffee,
   Cover,
+  PostGrid,
   Section,
   SocialNetworks,
   Title,
+  Post,
 } from "@/components";
 import Head from "next/head";
 // import Image from 'next/image'
 import { loadPosts } from "./api/posts";
+import React, { useState } from "react";
 const LOAD_MORE_STEP = 4;
 
 export default function Home({ initialPosts, total }) {
-  console.log(initialPosts);
+  const [posts, setPosts] = useState(initialPosts);
   return (
     <>
       <Head>
@@ -27,6 +30,11 @@ export default function Home({ initialPosts, total }) {
         </Section>
         <Section>
           <Title>New Post</Title>
+          <PostGrid>
+            {posts.map((post) => (
+              <Post key={post.slug.current} {...post} />
+            ))}
+          </PostGrid>
         </Section>
       </main>
     </>

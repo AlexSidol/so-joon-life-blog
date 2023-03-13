@@ -44,13 +44,29 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Main image',
+      name: 'image',
+      title: 'Image',
       type: 'image',
       group: 'content',
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+          options: {
+            isHighlighted: true // <-- make this field easily accessible
+          }
+        },
+        {
+          // Editing this field will be hidden behind an "Edit"-button
+          name: 'attribution',
+          type: 'string',
+          title: 'Attribution',
+        }
+      ],
       validation: Rule => Rule.required(),
     }),
     defineField({
@@ -63,6 +79,13 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      group: 'content',
+      validation: Rule => Rule.required(),
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
       group: 'content',
       validation: Rule => Rule.required(),
     }),
