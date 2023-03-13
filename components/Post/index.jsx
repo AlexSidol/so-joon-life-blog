@@ -2,12 +2,12 @@ import React from "react";
 import styles from "./index.module.scss";
 import cl from "classnames";
 import Link from "next/link";
-// import Image from "next/image";
 import { urlFor } from "../../lib/client";
 import Title from "../Title";
 import Image from "next/image";
 
 const Post = ({ className, image, title, description, slug }) => {
+  console.log(image);
   return (
     <Link
       href={`/post/${encodeURIComponent(slug.current)}`}
@@ -21,7 +21,7 @@ const Post = ({ className, image, title, description, slug }) => {
           <div>
             <Image
               src={urlFor(image).url()}
-              alt="cat"
+              alt={image.caption}
               width="100"
               height="100"
             />
