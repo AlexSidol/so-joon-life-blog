@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from "next/head";
 import { format } from 'date-fns';
 import { client } from '../../lib/client';
 import styles from './styles.module.scss';
@@ -10,7 +11,13 @@ const Post = ({ post }) => {
   const date = format(new Date(post._createdAt
   ), 'dd MMM yyyy');
   return (
+
     <Article backUrl='/' className={styles.post}>
+      <Head>
+        <title>{post.meta_title}</title>
+
+        <link data-n-head="ssr" rel="icon" data-hid="favicon-32" type="image/png" size="32" href="https://img.icons8.com/material-outlined/384w/cat-footprint.png" />
+      </Head>
       <Title className={styles.postTitle}>
         {post.title}
       </Title>
