@@ -12,7 +12,7 @@ import Head from "next/head";
 // import Image from 'next/image'
 import { loadPosts } from "./api/posts";
 import React, { useState } from "react";
-const LOAD_MORE_STEP = 4;
+const LOAD_MORE_STEP = 2;
 
 export default function Home({ initialPosts, total }) {
   const [posts, setPosts] = useState(initialPosts);
