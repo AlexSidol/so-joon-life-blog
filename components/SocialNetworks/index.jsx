@@ -13,22 +13,22 @@ import ScreenEgg from "../ScreenEgg"; //щоб іконки виїзжали з�
 const socialNetworks = [
   {
     id: "1",
-    href: "https://www.youtube.com/channel/UCk1dX69iPze48_Pp-Ko_9Vw",
+    href: "https://www.linkedin.com/in/alesia-sidolaka/",
     icon: AiFillLinkedin,
   },
   {
     id: "2",
-    href: "https://www.youtube.com/channel/UCk1dX69iPze48_Pp-Ko_9Vw",
+    href: "https://github.com/AlexSidol",
     icon: AiFillGithub,
   },
   {
     id: "3",
-    href: "https://www.youtube.com/channel/UCk1dX69iPze48_Pp-Ko_9Vw",
+    href: "https://twitter.com/asidolaka_sid",
     icon: AiFillTwitterSquare,
   },
   {
     id: "4",
-    href: "https://www.youtube.com/channel/UCk1dX69iPze48_Pp-Ko_9Vw",
+    href: "https://www.instagram.com/p/BorbODyj7HrmaU9-tpQMWYj_0Eeqy4t9SuAm180/",
     icon: AiFillInstagram,
   },
 ];
